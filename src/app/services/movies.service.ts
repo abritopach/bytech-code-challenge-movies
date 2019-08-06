@@ -24,4 +24,14 @@ export class MoviesService {
       timeout(5000)
     );
   }
+
+  getMovieDetails(id: string): Observable<Movie> {
+    return this.http
+    // Type-checking the response => .get<Movie[]>
+    .get<Movie>(this.URL_BASE + `/${id}`)
+    .pipe(
+      retryWhen(error => error.pipe(delay(500))),
+      timeout(5000)
+    );
+  }
 }

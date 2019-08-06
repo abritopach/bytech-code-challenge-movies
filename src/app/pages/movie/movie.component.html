@@ -1,0 +1,26 @@
+<mat-card *ngIf="movie !== null">
+    <div fxLayout="row">
+        <div fxFlex="20"></div>
+        <div fxFlex="60">
+            <mat-card-header>
+                <mat-card-title><mat-icon color="primary">info</mat-icon> {{movie.title}} ({{movie.year}})</mat-card-title>
+                <mat-card-subtitle *ngIf="movie.director"><mat-icon color="primary">assignment_ind</mat-icon> {{movie.director}} </mat-card-subtitle>
+                <mat-card-subtitle *ngIf="movie.genre"><mat-icon color="primary">label</mat-icon> {{movie.genre}} </mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="movie.poster" alt="Movie poster">
+            <mat-card-content>
+            <p *ngIf="movie.notes">
+                <b>Notes: </b>{{movie.notes}}
+            </p>
+            <p *ngIf="movie.cast">
+                <b>Cast: </b>{{movie.cast}}
+            </p>
+            </mat-card-content>
+            <mat-card-actions>
+            <button mat-flat-button color="primary">LIKE</button>
+            <button style="margin-left: 10px;" mat-flat-button color="accent">SHARE</button>
+            </mat-card-actions>
+        </div>
+        <div fxFlex="20"></div>
+    </div>
+</mat-card>

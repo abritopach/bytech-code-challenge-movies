@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'movies', pathMatch: 'full' },
   { path: 'movies', loadChildren: './pages/movies/movies.module#MoviesPageModule' },
+  { path: 'movie/:id', loadChildren: './pages/movie/movie.module#MoviePageModule' }
 ];
 
 @NgModule({
