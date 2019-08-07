@@ -25,6 +25,7 @@
     "@ngxs/store": "^3.5.0",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",
+    "st-three-dimensional-card-carousel": "0.0.39",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

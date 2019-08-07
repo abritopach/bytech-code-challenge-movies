@@ -76,6 +76,19 @@ Technologies: Angular, Angular Material, Angular router, NGXS, TypeScript.
     
 ```
 
+## Running APP
+
+```bash
+
+    $ git clone https://github.com/abritopach/bytech-code-challenge-movies
+    $ cd bytech-code-challenge-movies 
+    $ npm install   
+    $ npm install -g @angular/cli // If not installed @angular/cli
+    $ ng serve
+
+```
+
+
 ## Code Challenge Architecture
 
 Probably the proposed architecture is not the perfect solution for all projects.

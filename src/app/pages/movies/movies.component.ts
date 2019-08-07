@@ -43,10 +43,8 @@ export class MoviesComponent implements OnInit {
   }
 
   fetchMovies(page, limit) {
-    console.log('MoviesComponent::fetchMovies | method called', page, limit);
     this.store.dispatch(new FetchMovies({page: page, limit: limit})).pipe(withLatestFrom(this.movies$))
       .subscribe(([movies]) => {
-        console.log('movies', movies.catalog.movies);
         this.dataSource = new MatTableDataSource(movies.catalog.movies);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
@@ -57,13 +55,17 @@ export class MoviesComponent implements OnInit {
   }
 
   viewMovieDetails(movie) {
-    console.log('MoviesComponent::viewMovieDetails | method called', movie);
     const movieDetailsURL = `/movie/${movie.id}`;
     this.router.navigate([movieDetailsURL]);
   }
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  showMoviesCarousel() {
+    const moviesCarouselURL = `/carousel`;
+    this.router.navigate([moviesCarouselURL]);
   }
 
 }

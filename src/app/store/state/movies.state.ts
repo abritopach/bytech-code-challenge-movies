@@ -34,7 +34,6 @@ export class MoviesState implements NgxsOnInit {
     }
 
     ngxsOnInit(ctx: StateContext<MoviesStateModel>) {
-        console.log('State initialized.');
         ctx.dispatch(new ClearState());
     }
 
@@ -47,7 +46,6 @@ export class MoviesState implements NgxsOnInit {
 
     @Action(FetchMovies, { cancelUncompleted: true })
     fetchMovies({ getState, setState }: StateContext<MoviesStateModel>, { payload }) {
-        console.log('MovieState::fetchMovies() | method called', payload);
         const { page, limit } = payload;
         if (getState().movies.length === 0) {
             return this.moviesService.getMovies(page, limit).pipe(

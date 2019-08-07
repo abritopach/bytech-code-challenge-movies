@@ -1,0 +1,12 @@
+<!-- Header. -->
+<app-header title="Movies Carousel"></app-header>
+
+<br>
+<div fxLayout="row" fxLayoutAlign="center center">
+    <button mat-flat-button color="primary" (click)="loadMore()">Load more</button>
+    <br>
+    <button style="margin-left: 10px;" mat-flat-button color="accent" (click)="handleAutoloop()">Autoloop</button>
+</div>
+
+<st-3D-card-carousel *ngIf="slides.length !== 0" [slides]="slides"></st-3D-card-carousel>
+
