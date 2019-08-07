@@ -154,9 +154,13 @@ Some of the advantages of using NGXS:
 
 When it comes to getting the movies, the action FETCH_MOVIES is triggered. 
 
-If there are no movies in the state, the result obtained from the request is assigned.
+If there are no movies in the state, the result obtained from the request is assigned. The request is made only once.
+
+![request](readme_resources/request.jpg "request")
 
 If the action is triggered again the request is not made and the movies data is obtained from state.
+
+![ngxs](readme_resources/ngxs.jpg "ngxs")
 
 ```bash
 
